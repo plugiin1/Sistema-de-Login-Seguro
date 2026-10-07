@@ -2,10 +2,14 @@ C:\Users\jcmcs\Desktop\Sistema de Login Seguro\src\main\java\com\pfc\auth\config
 C:\Users\jcmcs\Desktop\Sistema de Login Seguro\src\main\java\com\pfc\auth\config\PasswordConfig.java
 C:\Users\jcmcs\Desktop\Sistema de Login Seguro\src\main\java\com\pfc\auth\config\SecurityConfig.java
 C:\Users\jcmcs\Desktop\Sistema de Login Seguro\src\main\java\com\pfc\auth\controller\AuthController.java
+C:\Users\jcmcs\Desktop\Sistema de Login Seguro\src\main\java\com\pfc\auth\controller\CadastroController.java
+C:\Users\jcmcs\Desktop\Sistema de Login Seguro\src\main\java\com\pfc\auth\dto\CadastroForm.java
 C:\Users\jcmcs\Desktop\Sistema de Login Seguro\src\main\java\com\pfc\auth\entity\Role.java
 C:\Users\jcmcs\Desktop\Sistema de Login Seguro\src\main\java\com\pfc\auth\entity\Usuario.java
+C:\Users\jcmcs\Desktop\Sistema de Login Seguro\src\main\java\com\pfc\auth\exception\UsuarioJaExisteException.java
 C:\Users\jcmcs\Desktop\Sistema de Login Seguro\src\main\java\com\pfc\auth\repository\UsuarioRepository.java
 C:\Users\jcmcs\Desktop\Sistema de Login Seguro\src\main\java\com\pfc\auth\service\UsuarioDetailsService.java
+C:\Users\jcmcs\Desktop\Sistema de Login Seguro\src\main\java\com\pfc\auth\service\UsuarioService.java
 C:\Users\jcmcs\Desktop\Sistema de Login Seguro\src\main\java\com\pfc\MongoInitConfig.java
 C:\Users\jcmcs\Desktop\Sistema de Login Seguro\src\main\java\com\pfc\thindesk\controller\ChamadoController.java
 C:\Users\jcmcs\Desktop\Sistema de Login Seguro\src\main\java\com\pfc\thindesk\controller\ClienteController.java
