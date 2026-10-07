@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
     <head>
         <meta charset="UTF-8">
     </head>
@@ -7,6 +7,13 @@
         <div th:fragment="sidebar">
             <div id="sidebar">
                 <h4 class="text-center py-3">Thindesk Menu</h4>
+                <div class="text-center small mb-3" sec:authorize="isAuthenticated()">
+                    <i class="bi bi-person-circle"></i>
+                    <span sec:authentication="name"></span>
+                    <span class="badge bg-secondary" sec:authorize="hasRole('ADMIN')">Administrador</span>
+                    <span class="badge bg-secondary" sec:authorize="hasRole('TECNICO')">Técnico</span>
+                    <span class="badge bg-secondary" sec:authorize="hasRole('CLIENTE')">Cliente</span>
+                </div>
                 <ul class="nav flex-column">
                     <li class="nav-item">
                         <a class="nav-link" th:href="@{/}" aria-current="page">Início</a>
@@ -16,15 +23,15 @@
                             <i class="bi bi-headset"></i> <span class="d-none d-md-inline">Chamados</span>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" sec:authorize="hasAnyRole('ADMIN', 'TECNICO')">
                         <a class="nav-link" th:href="@{/clientes}">
                             <i class="bi bi-person"></i> <span class="d-none d-md-inline">Clientes</span>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" sec:authorize="hasRole('ADMIN')">
                         <a class="nav-link" href="#" onclick="toggleSubmenu(event, this)">
                             Configurações
-                            <span class="float-end">&#9662;</span> <!-- Setinha -->
+                            <span class="float-end">&#9662;</span>
                         </a>
                         <ul class="nav flex-column submenu">
                             <li class="nav-item">
@@ -48,6 +55,13 @@
                                 </a>
                             </li>
                         </ul>
+                    </li>
+                    <li class="nav-item mt-3" sec:authorize="isAuthenticated()">
+                        <form th:action="@{/logout}" method="post">
+                            <button type="submit" class="nav-link btn btn-link text-start w-100">
+                                <i class="bi bi-box-arrow-right"></i> <span class="d-none d-md-inline">Sair</span>
+                            </button>
+                        </form>
                     </li>
                 </ul>
             </div>

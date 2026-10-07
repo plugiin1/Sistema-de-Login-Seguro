@@ -4,14 +4,15 @@ com\pfc\auth\entity\Usuario.class
 com\pfc\auth\service\UsuarioDetailsService.class
 com\pfc\thindesk\controller\HomeController.class
 com\pfc\thindesk\entity\HorarioAtendimento.class
+com\pfc\auth\controller\AuthController.class
 com\pfc\auth\config\PasswordConfig.class
 com\pfc\thindesk\repository\HorarioAtendimentoRepository.class
 com\pfc\thindesk\entity\Cliente.class
 com\pfc\MongoInitConfig.class
 com\pfc\ThindeskApplication.class
+com\pfc\auth\config\SecurityConfig.class
 com\pfc\thindesk\service\ClienteService.class
 com\pfc\thindesk\entity\Chamado.class
-com\pfc\SecurityConfig.class
 com\pfc\thindesk\controller\ClienteController.class
 com\pfc\auth\entity\Role.class
 com\pfc\thindesk\repository\ChamadoRepository.class

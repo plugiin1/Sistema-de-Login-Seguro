@@ -27,11 +27,6 @@ public class HomeController {
     @Autowired
     private HorarioAtendimentoService horarioAtendimentoService;
 
-    @GetMapping("/login")
-    public String login() {
-        return "login";
-    }
-
     @GetMapping("/")
     public ModelAndView home() {
         ModelAndView modelAndView = new ModelAndView("layout");
