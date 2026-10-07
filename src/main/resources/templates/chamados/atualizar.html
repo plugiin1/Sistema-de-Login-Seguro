@@ -1,31 +1,40 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/base}">
 <head>
     <title>Editar Chamado</title>
 </head>
 <body>
-    <h1>Editar Chamado</h1>
-    <form th:action="@{/chamados/atualizar/{id}(id=${chamado.id})}" th:object="${chamado}" method="post">
-        <label for="descricao">Descrição:</label>
-        <input type="text" id="descricao" name="descricao" th:value="*{descricao}" />
-
-        <label for="status">Status:</label>
-        <select id="status" name="status" th:value="*{status}">
-            <option value="ABERTO">Aberto</option>
-            <option value="EM_ANDAMENTO">Em Andamento</option>
-            <option value="CONCLUIDO">Concluído</option>
-        </select>
-
-        <label for="tipo">Tipo:</label>
-        <input type="text" id="tipo" name="tipo" th:value="*{tipo}" />
-
-        <label for="responsavel">Técnico:</label>
-        <input type="text" id="tecnico" name="tecnico" th:value="*{tecnico}" />
-        
-        <label for="responsavel">Usuário</label>
-        <input type="text" id="usuario" name="usuario" th:value="*{usuario}" />
-
-        <button type="submit">Salvar</button>
-    </form>
+    <div layout:fragment="content" class="container mt-4" style="max-width: 640px;">
+        <h2 class="mb-4">Editar Chamado</h2>
+        <form th:action="@{/chamados/atualizar/{id}(id=${chamado.id})}" th:object="${chamado}" method="post">
+            <div class="mb-3">
+                <label for="descricao" class="form-label">Descrição</label>
+                <input type="text" id="descricao" th:field="*{descricao}" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="status" class="form-label">Status</label>
+                <select id="status" th:field="*{status}" class="form-select">
+                    <option value="ABERTO">Aberto</option>
+                    <option value="EM_ANDAMENTO">Em Andamento</option>
+                    <option value="CONCLUIDO">Concluído</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="tipo" class="form-label">Tipo</label>
+                <input type="text" id="tipo" th:field="*{tipo}" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="tecnico" class="form-label">Técnico</label>
+                <input type="text" id="tecnico" th:field="*{tecnico}" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="usuario" class="form-label">Usuário</label>
+                <input type="text" id="usuario" th:field="*{usuario}" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Salvar</button>
+        </form>
+    </div>
 </body>
 </html>

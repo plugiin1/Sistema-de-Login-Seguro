@@ -6,7 +6,7 @@
     <body>
         <div th:fragment="sidebar">
             <div id="sidebar">
-                <h4 class="text-center py-3">Thindesk Menu</h4>
+                <h4 class="text-center py-3" th:text="${ui.nome}">Menu</h4>
                 <div class="text-center small mb-3" sec:authorize="isAuthenticated()">
                     <i class="bi bi-person-circle"></i>
                     <span sec:authentication="name"></span>
@@ -55,6 +55,17 @@
                                 </a>
                             </li>
                         </ul>
+                    </li>
+                    <li class="nav-item mt-3 px-3">
+                        <form th:action="@{/tema}" method="post">
+                            <label for="tema" class="form-label small mb-1"><i class="bi bi-palette"></i> Tema</label>
+                            <select id="tema" name="tema" class="form-select form-select-sm" data-auto-submit>
+                                <option th:each="opcao : ${ui.temas}"
+                                        th:value="${opcao.key}"
+                                        th:text="${opcao.value.descricao}"
+                                        th:selected="${opcao.key == ui.tema}"></option>
+                            </select>
+                        </form>
                     </li>
                     <li class="nav-item mt-3" sec:authorize="isAuthenticated()">
                         <form th:action="@{/logout}" method="post">
