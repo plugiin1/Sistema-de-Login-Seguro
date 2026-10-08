@@ -14,4 +14,6 @@ public interface UsuarioRepository extends MongoRepository<Usuario, String> {
     boolean existsByEmail(String email);
 
     boolean existsByRole(Role role);
+
+    long countByRoleAndAtivoTrue(Role role);
 }

@@ -6,6 +6,7 @@ com\pfc\ui\UiContext.class
 com\pfc\auth\config\SecurityConfig.class
 com\pfc\thindesk\entity\Chamado.class
 com\pfc\auth\dto\CadastroForm.class
+com\pfc\auth\exception\OperacaoNaoPermitidaException.class
 com\pfc\thindesk\repository\ChamadoRepository.class
 com\pfc\ui\UiProperties.class
 com\pfc\thindesk\controller\ChamadoController.class
@@ -13,6 +14,7 @@ com\pfc\ui\UiProperties$Tema.class
 com\pfc\auth\entity\Usuario.class
 com\pfc\auth\service\UsuarioService.class
 com\pfc\ui\UiAdvice.class
+com\pfc\auth\controller\AdminUsuarioController.class
 com\pfc\thindesk\entity\HorarioAtendimento.class
 com\pfc\auth\controller\AuthController.class
 com\pfc\auth\config\PasswordConfig.class
@@ -21,8 +23,10 @@ com\pfc\ui\TemaController.class
 com\pfc\thindesk\entity\Cliente.class
 com\pfc\MongoInitConfig.class
 com\pfc\ThindeskApplication.class
+com\pfc\auth\service\SessaoService.class
 com\pfc\thindesk\service\ClienteService.class
 com\pfc\auth\exception\UsuarioJaExisteException.class
+com\pfc\auth\service\AdminUsuarioService.class
 com\pfc\thindesk\controller\ClienteController.class
 com\pfc\auth\entity\Role.class
 com\pfc\thindesk\controller\HorarioAtendimentoController.class

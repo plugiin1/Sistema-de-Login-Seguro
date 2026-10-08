@@ -13,3 +13,11 @@ function toggleSubmenu(event, element) {
 document.querySelectorAll('[data-auto-submit]').forEach((campo) => {
     campo.addEventListener('change', () => campo.form.submit());
 });
+
+document.querySelectorAll('form[data-confirm]').forEach((form) => {
+    form.addEventListener('submit', (event) => {
+        if (!confirm(form.dataset.confirm)) {
+            event.preventDefault();
+        }
+    });
+});
