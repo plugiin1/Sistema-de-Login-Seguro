@@ -2,6 +2,8 @@
 
 Sistema de autenticação e autorização desenvolvido com **Java Spring Boot**, **Spring Security**, **Thymeleaf** e **MongoDB Atlas**. Ele foi construído de forma genérica, para servir de base ao PFC.
 
+![Tela inicial do sistema com o tema Verde-Menta, logado como administrador](docs/images/tela-inicial.png)
+
 ## Funcionalidades
 
 - Cadastro de usuários com validação de dados e senha criptografada com **BCrypt**
@@ -64,7 +66,7 @@ As credenciais **nunca** ficam no código. A aplicação lê as configurações 
 | `MONGODB_DATABASE` | | Nome do banco | `thindesk` |
 | `ADMIN_USERNAME` | | Usuário do administrador inicial | `admin` |
 | `ADMIN_EMAIL` | | E-mail do administrador inicial | `admin@thindesk.local` |
-| `ADMIN_PASSWORD` | ✅¹ | Senha do administrador inicial | — |
+| `ADMIN_PASSWORD` | ✅ | Senha do administrador inicial | — |
 | `SESSION_TIMEOUT` | | Tempo de inatividade até a sessão expirar | `30m` |
 | `COOKIE_SECURE` | | `true` para enviar o cookie de sessão só por HTTPS (use em produção) | `false` |
 | `APP_NOME` | | Nome exibido no sistema | `Thindesk` |
