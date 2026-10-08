@@ -32,6 +32,7 @@ public class AdminUsuarioService {
 
         usuario.setRole(novaRole);
         usuarioRepository.save(usuario);
+        // Força um novo login pro usuário usar as permissões do novo perfil.
         sessaoService.encerrarSessoes(usuario.getUsername());
         return usuario;
     }
@@ -77,6 +78,7 @@ public class AdminUsuarioService {
         }
     }
 
+    // Impede ela de deixar o sistema sem administrador ativo.
     private void garantirOutroAdminAtivo(Usuario usuario) {
         long adminsAtivos = usuarioRepository.countByRoleAndAtivoTrue(Role.ADMIN);
         long restantes = usuario.isAtivo() ? adminsAtivos - 1 : adminsAtivos;

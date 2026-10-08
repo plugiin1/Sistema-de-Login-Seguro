@@ -34,8 +34,10 @@ public class UsuarioService {
         usuario.setUsername(username);
         usuario.setEmail(email);
         usuario.setSenha(passwordEncoder.encode(form.getSenha()));
+        // todo cadastro normal começa como CLIENTE
         usuario.setRole(Role.CLIENTE);
 
+        // índice único do MongoDB impede dois cadastros iguais enviados ao mesmo tempo.
         try {
             return usuarioRepository.save(usuario);
         } catch (DuplicateKeyException e) {

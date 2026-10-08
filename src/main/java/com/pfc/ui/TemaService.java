@@ -22,6 +22,7 @@ public class TemaService {
         return tema != null && properties.getTemas().containsKey(tema);
     }
 
+    // Só aceita o valor do cookie se for um tema cadastrado.
     public String resolver(HttpServletRequest request) {
         Cookie cookie = WebUtils.getCookie(request, COOKIE_TEMA);
         if (cookie != null && existe(cookie.getValue())) {
@@ -30,6 +31,7 @@ public class TemaService {
         return properties.getTemaPadrao();
     }
 
+    // nome, logo, tema e modo claro/escuro usados pelos layouts.
     public UiContext contexto(HttpServletRequest request) {
         String tema = resolver(request);
         UiProperties.Tema config = properties.getTemas().get(tema);
